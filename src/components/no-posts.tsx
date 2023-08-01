@@ -8,7 +8,7 @@ export default function Nopost() {
         <div className="flex min-h-[400px] flex-col items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in-50 mx-20 ">
             <FileTextIcon className="h-16 w-16"/>
             <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-                You don't have any posts yet.
+                You do not have any posts yet.
             </h3>
             <br />
             <p className="text-sm text-muted-foreground">Create one</p>
