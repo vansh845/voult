@@ -11,11 +11,9 @@ export default function Nopost() {
                 You don't have any posts yet.
             </h3>
             <br />
-            <p className="text-sm text-muted-foreground">
-                Create one
-            </p>
+            <p className="text-sm text-muted-foreground">Create one</p>
             <br />
-            <Link href='/editor'><Button className="flex justify-between "><PlusIcon className="mr-1"/> <p>New Post</p></Button></Link>
+            <Link href='/editor'><Button className="flex justify-between "><PlusIcon className="mr-1"/>New Post</Button></Link>
         </div>
     )
 }
