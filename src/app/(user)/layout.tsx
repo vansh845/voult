@@ -1,4 +1,5 @@
 import { MainNav } from "@/components/main-nav"
+import { ThemeProvider } from "@/components/theme-provider"
 export default function RootLayout({
     children,
 }: {
@@ -7,10 +8,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
+                <ThemeProvider attribute="class" defaultTheme="dark">
+                    <main>
+                        {children}
+                    </main>
+                </ThemeProvider>
                 <MainNav />
-                <main>
-                    {children}
-                </main>
             </body>
         </html>
     )
