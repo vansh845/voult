@@ -10,10 +10,10 @@ export default function RootLayout({
             <body>
                 <ThemeProvider attribute="class" defaultTheme="dark">
                     <main>
+                        <MainNav />
                         {children}
                     </main>
                 </ThemeProvider>
-                <MainNav />
             </body>
         </html>
     )
