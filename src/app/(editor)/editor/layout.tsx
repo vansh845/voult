@@ -1,17 +1,19 @@
 import { ThemeProvider } from "@/components/theme-provider"
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+import { Toaster } from "@/components/ui/toaster"
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <main>{children}</main>
-        </ThemeProvider>
-
-      </body>
-    </html>
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <main>
+              {children}
+            </main>
+            <Toaster />
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   )
 }

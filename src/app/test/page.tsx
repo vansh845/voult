@@ -1,11 +1,15 @@
-'use client'
+import { Skeleton } from "@/components/ui/skeleton"
 
-import { useToast } from "@/components/ui/use-toast"
-import { Button } from "@/components/ui/button"
-
-export default function Test(){
-    const { toast } = useToast()
+export default function LoadingDashBoard() {
     return (
-        <Button variant={'outline'} onClick={()=>{toast({title:'fuck you'})}}>click me please!!!</Button>
+        <div className="absolute flex-col items-center pl-36 top-1/3 h-96 w-96">
+            <div className="object-center">
+                <Skeleton className="w-full h-20 mt-5" />
+                <Skeleton className="w-full h-20 mt-5" />
+                <Skeleton className="w-full h-20 mt-5" />
+
+            </div>
+
+        </div>
     )
 }

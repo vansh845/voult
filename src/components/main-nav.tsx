@@ -20,8 +20,8 @@ import { Skeleton } from "./ui/skeleton"
 export function MainNav() {
     const { isLoaded, isSignedIn, user } = useUser()
     return (
-        <NavigationMenu className="sticky top-0 z-40 border-b bg-background">
-            <NavigationMenuList className="flex w-screen justify-between p-4">
+        <NavigationMenu className=" top-0 z-40 border-b bg-background">
+            <NavigationMenuList className=" flex w-screen justify-between p-4">
                 <div className="flex">
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
@@ -51,6 +51,7 @@ export function MainNav() {
                 </div>
             </NavigationMenuList>
         </NavigationMenu>
+
     )
 }
 

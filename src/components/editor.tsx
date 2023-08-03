@@ -10,7 +10,9 @@ import { useToast } from "./ui/use-toast"
 import {Loader2} from 'lucide-react'
 import axios from "axios";
 
-export default function Editor() {
+
+
+export default function Editor({id}:{id:number}) {
     const {toast} = useToast();
     const [PostData, setPostData] = useState({ title: 'Untitled', content: '' });
     const mutation = useMutation({
