@@ -3,7 +3,7 @@ import {dark} from '@clerk/themes'
 
 export default function Page() {
   return(
-    <div className="absolute inset-1/3 top-1/3">
+    <div className="flex justify-center items-center h-screen">
         <SignIn redirectUrl={'/dashboard'} appearance={{baseTheme:dark}} />
     </div>
     
