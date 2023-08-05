@@ -12,14 +12,14 @@ export default async function DashBoard() {
 
 
     return (
-        <div className="overflow-x-hidden">
-            <div className="px-20 py-10 flex w-screen items-center">
-                <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl grow">
+        <div className="px-8 md:px-16 lg:px-32 ">
+            <div className="flex items-center py-8">
+                <h1 className="scroll-m-20 text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl grow">
                     Posts
                 </h1>
-                <Link href='/editor'><Button className="flex justify-between" variant={'default'}><PlusIcon className="mr-1"/>New Post</Button></Link>
+                <Link href='/editor'><Button className="flex items-center rounded-full md:rounded-md justify-between" variant={'ghost'}><PlusIcon className="w-5 h-5"/><span className="hidden md:flex ml-1">New Post</span></Button></Link>
             </div>
-            <div className="flex-col m-10">
+            <div className="flex-col ">
 
                 {posts.length !== 0 ? posts.map(post => <PostContainer key={post.id} post={post} />) : <Nopost />}
             </div>

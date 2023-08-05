@@ -66,13 +66,13 @@ export default function PostContainer({ post }: { post: PostType }) {
 
 
     return (
-        <div className="mx-20 mt-5 w-1/2 flex justify-between font-semibold rounded-md border items-center flex p-5 border-slate-700 border-solid min-h-20">
+        <div className="flex justify-between text-sm font-normal md:text-md  rounded-md border items-center p-5 mb-3 border-slate-800  ">
             <div>{post.title}</div>
             <div>
                 <Dialog>
                     <AlertDialog>
                         <DropdownMenu>
-                            <DropdownMenuTrigger className="focus:outline-none">{isLoading ? <Loader2 className="mr-1 animate-spin" /> : <MoreVertical />}</DropdownMenuTrigger>
+                            <DropdownMenuTrigger className="focus:outline-none">{isLoading ? <Loader2 className="mr-1 animate-spin" /> : <MoreVertical className="h-4 md:h-5"/>}</DropdownMenuTrigger>
                             <DropdownMenuContent>
                                 <DialogTrigger asChild><DropdownMenuItem>View</DropdownMenuItem></DialogTrigger>
                                 
