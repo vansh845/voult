@@ -46,13 +46,13 @@ export default function Editor() {
     }
 
     return (
-            <div className="px-20 py-10 overflow-hidden">
-                <div className="flex w-full justify-between">
+            <div className="px-8 md:px-16 lg:px-32">
+                <div className="flex justify-between items-center py-8">
                     <Button onClick={()=>router.push('/dashboard')} variant={'ghost'}><ChevronLeftIcon className="mr-1" />Back</Button>
-                    <Button onClick={handleClick} variant={'default'}>{isLoading ? <Loader2 className="animate-spin mr-1" /> : ''}Save</Button>
+                    <Button onClick={handleClick} variant={'default'} className="h-8 md:h-9">{isLoading ? <Loader2 className="animate-spin mr-1" /> : ''}Save</Button>
                 </div>
                 <div>
-                    <div className="grid w-full gap-1.5 mx-96 my-20 overflow-hidden">
+                    <div className="flex-col">
                         <Input id="title" className="max-w-2xl" placeholder="Title" value={PostData.title} onChange={e => setPostData({ ...PostData, title: e.target.value })}></Input>
                         <br />
                         <Textarea id="content" className="resize-none" placeholder="enter text" value={PostData.content} onChange={e => setPostData({ ...PostData, content: e.target.value })} />
