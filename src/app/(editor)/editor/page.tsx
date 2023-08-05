@@ -55,7 +55,7 @@ export default function Editor() {
                     <div className="flex-col">
                         <Input id="title" className="max-w-2xl" placeholder="Title" value={PostData.title} onChange={e => setPostData({ ...PostData, title: e.target.value })}></Input>
                         <br />
-                        <Textarea id="content" className="resize-none" placeholder="enter text" value={PostData.content} onChange={e => setPostData({ ...PostData, content: e.target.value })} />
+                        <Textarea id="content" className="resize-none w-full" placeholder="enter text" value={PostData.content} onChange={e => setPostData({ ...PostData, content: e.target.value })} />
                     </div>
                 </div>
             </div>
