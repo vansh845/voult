@@ -2,6 +2,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { UserButton, useUser } from "@clerk/nextjs"
+import { CircleSlash2 } from "lucide-react"
 
 
 import { cn } from "@/lib/utils"
@@ -20,30 +21,37 @@ import { Skeleton } from "./ui/skeleton"
 export function MainNav() {
     const { isLoaded, isSignedIn, user } = useUser()
     return (
-        <NavigationMenu className=" top-0 z-40 border-b bg-background">
-            <NavigationMenuList className=" flex w-screen justify-between p-4">
-                <div className="flex">
-                    <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                About Us
-                            </NavigationMenuLink>
-                        </Link>
+        <NavigationMenu >
+            <NavigationMenuList className=" flex p-5 px-6 md:px-10 lg:px-20 border-b w-screen justify-between">
+                <div className="md:flex items-center">
+                    <NavigationMenuItem className="mr-2">
+                        <Link href={'/'}><CircleSlash2 /></Link>
+
                     </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Documentation
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                Pricing
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
+                    <div className="hidden md:flex">
+                        <NavigationMenuItem>
+                            <Link href="/" legacyBehavior passHref>
+                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                    About Us
+                                </NavigationMenuLink>
+                            </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <Link href="/" legacyBehavior passHref>
+                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                    Documentation
+                                </NavigationMenuLink>
+                            </Link>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <Link href="/" legacyBehavior passHref>
+                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                    Pricing
+                                </NavigationMenuLink>
+                            </Link>
+                        </NavigationMenuItem>
+                    </div>
+
                 </div>
                 <div className="flex justify-between items-center">
                     {isLoaded ? isSignedIn ? <DashButton /> : '' : ''}
