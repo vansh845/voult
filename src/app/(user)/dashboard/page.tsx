@@ -3,13 +3,22 @@ import Nopost from "@/components/no-posts"
 import Link from 'next/link'
 import { PlusIcon } from "@radix-ui/react-icons"
 import PostContainer from "@/components/post-container"
-import prisma from "@/lib/db"
+import {auth} from '@clerk/nextjs'
+import { PrismaClient } from "@prisma/client"
+
+const prisma = new PrismaClient()
 
 export default async function DashBoard() {
+    const {userId} = auth();
+    if(!userId){
+        return
+    }
 
-    const posts = await prisma.posts.findMany();
-
-
+    const posts = await prisma.post.findMany({
+        where:{
+            authorid:userId
+        }
+    });
 
     return (
         <div className="px-8 md:px-16 lg:px-32 ">
