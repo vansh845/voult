@@ -33,12 +33,12 @@ export default function Editor() {
         }
     })
     async function handleClick() {
-        mutation.mutate()
         setLoading(true)
+        mutation.mutate()
         const pr = new Promise((res) => {
             setTimeout(() => {
                 res('resolved')
-            }, 800);
+            }, 1000);
         })
         await pr
         setLoading(false)
@@ -55,7 +55,7 @@ export default function Editor() {
             </div>
             <div>
                 <div className="flex-col">
-                    <Input id="title" className="max-w-2xl" placeholder="Title" value={PostData.title} onChange={e => setPostData({ ...PostData, title: e.target.value })}></Input>
+                    <Input id="title" className="max-w-2xl bg-inherit" placeholder="Title" value={PostData.title} onChange={e => setPostData({ ...PostData, title: e.target.value })}></Input>
                     <br />
                     <Textarea id="content" className="resize-none w-full" placeholder="enter text" value={PostData.content} onChange={e => setPostData({ ...PostData, content: e.target.value })} />
                 </div>

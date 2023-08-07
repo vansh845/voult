@@ -3,7 +3,7 @@ import * as React from "react"
 import Link from "next/link"
 import { UserButton, useUser } from "@clerk/nextjs"
 import { CircleSlash2 } from "lucide-react"
-
+import { ModeToggle } from "./mode-toggle"
 
 import { cn } from "@/lib/utils"
 // import { Icons } from "@/components/icons"
@@ -24,9 +24,9 @@ export function MainNav() {
         <NavigationMenu >
             <NavigationMenuList className=" flex p-5 px-6 md:px-10 lg:px-20 border-b w-screen justify-between">
                 <div className="md:flex items-center">
-                    <NavigationMenuItem className="mr-2">
+                    <NavigationMenuItem className="mr-2 flex items-center">
                         <Link href={'/'}><CircleSlash2 /></Link>
-
+                        
                     </NavigationMenuItem>
                     <div className="hidden md:flex">
                         <NavigationMenuItem>
@@ -53,7 +53,9 @@ export function MainNav() {
                     </div>
 
                 </div>
-                <div className="flex justify-between items-center">
+                
+                <div className="flex justify-between space-x-1 md:space-x-2 items-center">
+                    <ModeToggle/>
                     {isLoaded ? isSignedIn ? <DashButton /> : '' : ''}
                     {isLoaded ? isSignedIn ? <UserButton /> : <Link href='/sign-in'><Button variant={'outline'}>Login</Button></Link> : <Skeleton className="h-10 w-10 rounded-full" />}
                 </div>
